@@ -1,5 +1,6 @@
 restaurant_name_array  = ["kaito","yodogawa","rails"]
 food_name_array = ["pig","chicken","entree","aperitif","buffet","barbecue","Japanese food","rice ball","roasted rice ball","rice cake","tempura bowl","pork cutlet bowl"]
+
 3.times do |n|
   restaurant = Restaurant.new(
     name: restaurant_name_array[n]+"のレストラン#{n}",
