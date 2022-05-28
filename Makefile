@@ -42,6 +42,8 @@ cfront:
 	docker compose exec front bash
 migrate:
 	docker compose exec api bundle exec rails db:migrate
+route:
+	docker compose exec api rails routes
 fresh:
 	docker compose exec app php artisan migrate:fresh --seed
 seed:
