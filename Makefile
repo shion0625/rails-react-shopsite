@@ -49,6 +49,9 @@ seed:
 	docker compose exec api bundle exec rails db:seed
 console:
 	docker compose exec api rails console
+reset:
+	docker compose exec api rails db:reset
+
 # dacapo:
 # 	docker compose exec app php artisan dacapo
 # rollback-test:
