@@ -24,7 +24,7 @@ services:
       TZ: Asia/Tokyo
       RAILS_ENV: development
     ports:
-      - 3000:3000
+      - 3001:3000
     depends_on:
       - db
 
@@ -34,7 +34,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./front:/usr/src/app
-    command: sh -c "yarn start"
+    command: sh -c "cd rails-react-app && yarn start"
     ports:
       - "8000:3000"
 volumes:

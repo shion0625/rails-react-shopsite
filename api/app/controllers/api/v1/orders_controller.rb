@@ -1,4 +1,4 @@
-class Api::V1::OrdersController < ApplicationController
+class Api::V1::OrderController < ApplicationController
   def create
     posted_line_foods = LineFood.where(id: params[:line_food_ids])
     order = Order.new(
