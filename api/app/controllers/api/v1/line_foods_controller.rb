@@ -1,6 +1,5 @@
 class Api::V1::LineFoodsController < ApplicationController
-before_action :set_food, only: %i[create]
-
+        before_action :set_food, only: %i[create]
   def index
     line_foods = LineFood.active
     if line_foods.exists?
@@ -26,9 +25,9 @@ before_action :set_food, only: %i[create]
     set_line_food(@ordered_food)
 
     if @line_food.save
-          render json: {
-            line_food: @line_food
-          }, status: :created
+      render json: {
+        line_food: @line_food
+      }, status: :created
     else
       render json: {}, status: :internal_server_error
     end
@@ -70,5 +69,5 @@ before_action :set_food, only: %i[create]
           active: true
         )
       end
-  end
+    end
 end

@@ -1,2 +1,2 @@
 FROM node:14.17.0-alpine
-WORKDIR /usr/src/app/rails-react-app
+WORKDIR /usr/src/app

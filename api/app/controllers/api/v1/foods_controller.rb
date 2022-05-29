@@ -6,5 +6,5 @@ class Api::V1::FoodsController < ApplicationController
     render json: {
       foods: foods
     }, status: :ok
-    end
+  end
 end
