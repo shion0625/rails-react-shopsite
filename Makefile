@@ -6,6 +6,8 @@ start:
 	docker-compose run api rails new . --force --no-deps --database=postgresql --api
 	docker-compose build
 	docker-compose run --rm front sh -c "npm install -g create-react-app && create-react-app rails-react-app"
+dstart:
+	docker compose start
 stop:
 	docker compose stop
 down:
