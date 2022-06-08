@@ -1,9 +1,9 @@
-import React, { Fragment, useReducer ,useEffect } from 'react';
+import React, { Fragment, useReducer, useEffect } from 'react';
+// style
 import styled from 'styled-components';
+import Skeleton from '@mui/material/Skeleton';
 
 import { Link } from 'react-router-dom';
-
-import Skeleton from '@mui/material/Skeleton';
 
 // apis
 import { fetchRestaurants } from '../apis/restaurants';
@@ -24,6 +24,7 @@ import {
   restaurantsReducer,
 } from '../reducers/restaurants';
 
+//style
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -32,7 +33,7 @@ const HeaderWrapper = styled.div`
 
 const MainLogoImage = styled.img`
   height: 90px;
-`
+`;
 
 const MainCoverImageWrapper = styled.div`
   text-align: center;
