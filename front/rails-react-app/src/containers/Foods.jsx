@@ -54,6 +54,9 @@ const FoodsList = styled.div`
 const ItemWrapper = styled.div`
   margin: 16px;
 `;
+const submitOrder = () => {
+  console.log("登録ボタンが押されました。")
+}
 
 export const Foods = ({
   match
@@ -124,10 +127,22 @@ export const Foods = ({
         state.isOpenOrderDialog &&
         <FoodOrderDialog
             food={state.selectedFood}
+            countNumber={state.selectedFoodCount}
             isOpen={state.isOpenOrderDialog}
+            onClickCountUp={() => setState({
+              ...state,
+              selectedFoodCount: state.selectedFoodCount+1,
+            })}
+            onClickCountDown={() => setState({
+              ...state,
+              selectedFoodCount: state.selectedFoodCount-1,
+            })}
+            onClickOrder={() => submitOrder()}
             onClose={() => setState({
               ...state,
-              isOpenOrderDialog: false
+              isOpenOrderDialog: false,
+              selectedFood: null,
+              selectedFoodCount:1,
             })}
           >
 
