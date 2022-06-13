@@ -1,5 +1,6 @@
+require 'pry'
 class Api::V1::LineFoodsController < ApplicationController
-        before_action :set_food, only: %i[create]
+        before_action :set_food, only: %i[create replace]
   def index
     line_foods = LineFood.active
     if line_foods.exists?
@@ -15,9 +16,9 @@ class Api::V1::LineFoodsController < ApplicationController
   end
 
   def create
-    if LineFood.active.other_restaurant(@ordered_food.restaurant.id).exists?
+    if LineFood.active.other_restaurant(@ordered_food.restaurant_id).exists?
       return render json: {
-        existing_restaurant: LineFood.other_restaurant(@ordered_food.restaurant.id).first.restaurant.name,
+        existing_restaurant: LineFood.other_restaurant(@ordered_food.restaurant_id).first.restaurant.name,
         new_restaurant: Food.find(params[:food_id]).restaurant.name,
       }, status: :not_acceptable
     end
@@ -34,7 +35,7 @@ class Api::V1::LineFoodsController < ApplicationController
   end
 
   def replace
-    LineFood.active.other_restaurant(@ordered_food.restaurant.id).each do |line_food|
+    LineFood.active.other_restaurant(@ordered_food.restaurant_id).each do |line_food|
       line_food.update_attribute(:active, false)
     end
 

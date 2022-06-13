@@ -79,7 +79,7 @@ reset:
 db:
 	docker compose exec db bash
 sql:
-	docker compose exec db bash -c 'mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
+	docker compose exec db bash -c 'psql -d rails-react-app_development -U shion'
 # redis:
 # 	docker compose exec redis redis-cli
 # ide-helper:
