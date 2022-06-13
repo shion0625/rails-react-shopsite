@@ -73,9 +73,7 @@ const SubText = styled.p`
 export const Restaurants = () => {
   const [state, dispatch] = useReducer(restaurantsReducer, initialState);
   useEffect(() => {
-    console.log('ho');
     dispatch({ type: restaurantsActionTypes.FETCHING });
-    console.log('hi');
     fetchRestaurants()
       .then((data) =>
         dispatch({
