@@ -1,4 +1,3 @@
-require 'pry'
 class Api::V1::LineFoodsController < ApplicationController
         before_action :set_food, only: %i[create replace]
   def index
