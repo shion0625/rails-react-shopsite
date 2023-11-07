@@ -1,4 +1,4 @@
-FROM ruby:2.7.6
+FROM ruby:2.7.8
 
 RUN apt-get update -qq && \
   apt-get install -y build-essential libpq-dev postgresql-client
